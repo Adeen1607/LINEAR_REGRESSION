@@ -1,0 +1,15 @@
+{
+  "repository": "Adeen1607/LINEAR_REGRESSION",
+  "review_date": "2026-10-11",
+  "evidence_note": "The supplied workbook contains **six semester observations**. The original least-squares fit reports a slope of **0.03805779 CGPA per attendance percentage point**, an intercept of **5.24699972**, and **training R-squared 0.94951765**. These describe the six-point fit only; no independent test performance or causal attendance effect is established.\n",
+  "inputs": [
+    {
+      "path": "Assessment/452.LinearRegression.ipynb",
+      "sha256": "a9c77c79ffc28a466055f0eb5f03979fe977ecd5e56bd8446b438a80f5261dea"
+    },
+    {
+      "path": "Assessment/gradepred.xlsx",
+      "sha256": "a0cc491223afaa5a39e0fadd4e59472df881b01423d68f9e87be02735b106613"
+    }
+  ]
+}

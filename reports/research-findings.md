@@ -1,0 +1,1 @@
+The supplied workbook contains **six semester observations**. The original least-squares fit reports a slope of **0.03805779 CGPA per attendance percentage point**, an intercept of **5.24699972**, and **training R-squared 0.94951765**. These describe the six-point fit only; no independent test performance or causal attendance effect is established.
