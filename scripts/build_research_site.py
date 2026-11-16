@@ -85,7 +85,12 @@ def extract_figs(repo,site):
           if data:
             b=base64.b64decode(''.join(data) if isinstance(data,list) else data);items.append((i,b))
       for i,b in items[-3:]:
-        f=site/'figures'/f'{p.stem.replace(" ","_")}-cell-{i+1}.png';f.parent.mkdir(parents=True,exist_ok=True);f.write_bytes(b)
+        # Include the repository-relative notebook path to avoid collisions between
+        # notebooks with the same basename in different directories.
+        relative_path = p.relative_to(repo).as_posix()
+        slug = re.sub(r'[^A-Za-z0-9_-]+', '_', relative_path.rsplit('.', 1)[0]).strip('_')
+        digest = hashlib.sha256(relative_path.encode('utf-8')).hexdigest()[:10]
+        f=site/'figures'/f'{slug}-{digest}-cell-{i+1}.png';f.parent.mkdir(parents=True,exist_ok=True);f.write_bytes(b)
         figs.append((f,f'Figure from {p.name}, original code cell {i+1}'))
     return figs
 
